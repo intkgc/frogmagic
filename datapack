@@ -1,0 +1,45 @@
+#!/bin/bash
+
+setup_dirs(){
+    echo -n "$1: "
+    read minecraft
+    echo -n "$2: "
+    read world
+    echo -n "$3: "
+    read name
+    echo "" > config
+    echo "minecraft=$minecraft" >> config
+    echo "world=$world" >> config 
+    echo "name=$name" >> config
+}
+
+setup(){
+    echo -n "select language [en/ru]: "
+    read lang
+    if [[ "$lang" == "ru" ]]; then
+        setup_dirs "укажите путь до minecraft'а без ковычек (например /home/kirbo/.minecraft)" "укажите название мира для теста" "Укажите название датапака"
+    elif [[ "$lang" == "en" ]]; then
+        setup_dirs "enter minecraft directory without quotes (e.g. /home/kirbo/.minecraft)" "enter test world name" "enter datapack name"
+    else 
+        echo "wrong input"
+    fi
+}
+
+build(){
+    cp -avr dp $minecraft/saves/$world/datapacks/$name
+    cp -avr rp $minecraft/resourcepacks/$name
+}
+
+if [ ! -e config ]
+then 
+    touch config
+    chmod +x config
+    setup
+else
+    source config
+    echo "$minecraft"
+fi
+
+if [[ "$1" == "build" ]]; then
+    build
+fi
