@@ -26,8 +26,12 @@ setup(){
 }
 
 build(){
-    cp -avr dp $minecraft/saves/$world/datapacks/$name
-    cp -avr rp $minecraft/resourcepacks/$name
+    dp=$minecraft/saves/$world/datapacks/$name
+    rp=$minecraft/resourcepacks/$name
+    rm -r $dp
+    rm -r $rp
+    cp -avr dp $dp
+    cp -avr rp $rp
 }
 
 if [ ! -e config ]
@@ -37,7 +41,6 @@ then
     setup
 else
     source config
-    echo "$minecraft"
 fi
 
 if [[ "$1" == "build" ]]; then
