@@ -1,9 +1,10 @@
 {
-    "parent":"item/generated",
+    "parent":"item/diamond_sword",
     "textures":{
         "layer0":"item/carrot_on_a_stick"
     },
     "overrides":[
-        { "predicate": {  "custom_model_data": 10 }, "model": "item/frogmagic/clock"}
+        { "predicate": {  "custom_model_data": 10 }, "model": "item/frogmagic/clock"},
+        { "predicate": {  "custom_model_data": 11 }, "model": "item/frogmagic/lightning_book"}
     ]
 }

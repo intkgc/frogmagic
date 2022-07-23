@@ -1,6 +1,6 @@
 {
     "replace": false,
     "values": [
-        "intkgc:frogmagic/reset"
+        "intkgc:frogmagic/init/init"
     ]
 }
