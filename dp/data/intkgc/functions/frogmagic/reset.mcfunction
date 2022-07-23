@@ -4,3 +4,4 @@
  #
  # Created by intkgc.
 ##
+function intkgc:frogmagic/init/scoreboards
