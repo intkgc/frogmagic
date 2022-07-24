@@ -5,6 +5,7 @@
     },
     "overrides":[
         { "predicate": {  "custom_model_data": 10 }, "model": "item/frogmagic/clock"},
-        { "predicate": {  "custom_model_data": 11 }, "model": "item/frogmagic/lightning_book"}
+        { "predicate": {  "custom_model_data": 11 }, "model": "item/frogmagic/books/lightning_book"},
+        { "predicate": {  "custom_model_data": 12 }, "model": "item/frogmagic/books/fire_book"}
     ]
 }
